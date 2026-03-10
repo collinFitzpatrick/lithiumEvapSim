@@ -6,7 +6,7 @@ import os
 # time_points = [40.2, 40.4, 40.6, 40.8, 41.0] # for steady
 # offset = 40
 # for cooldown
-time_points = {0:list(range(0, 150, 1)),
+time_points = {0:[150],#0:list(range(0, 150, 1)),
 1:[150.5, 151, 151.5, 152, 152.5,153,  153.5, 154, 154.5, 155],
 2:list(range(156, 255, 1)),
 3:list(range(256, 1346, 10))} 
@@ -21,7 +21,7 @@ if not os.path.exists(output_dir):
 model = ExtAPI.DataModel.Project.Model
 # Change this subscript to access different Solutions!
 # 0 for ramp up, 1 for steady, 2 for cooldown
-for i in [1]:
+for i in [0]:
     section_times = time_points[i]
     offset = offsets[i]
     analysis = model.Analyses[i]
